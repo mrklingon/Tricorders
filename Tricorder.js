@@ -1,5 +1,5 @@
 // advance mode, display signal color
-function nxtState () {
+function nxtState() {
     state = States.shift()
     States.push(state)
     if (state == "Light") {
@@ -17,7 +17,7 @@ function nxtState () {
     pause(500)
 }
 // translate text, display in Morse
-function doCode (inputxt: string) {
+function doCode(inputxt: string) {
     encrypt(inputxt)
     for (let index = 0; index <= code.length - 1; index++) {
         char = code.substr(index, 1)
@@ -32,7 +32,7 @@ function doCode (inputxt: string) {
         }
     }
 }
-function encrypt (text: string) {
+function encrypt(text: string) {
     code = ""
     for (let index2 = 0; index2 <= text.length - 1; index2++) {
         char = text.substr(index2, 1)
@@ -44,33 +44,33 @@ function encrypt (text: string) {
         }
     }
 }
-function space () {
+function space() {
     light.setAll(0x000000)
     light.showRing(
-    `black black black purple purple purple purple black black black`
+        `black black black purple purple purple purple black black black`
     )
     pause(100)
     light.setAll(0x000000)
 }
-function dash () {
+function dash() {
     light.setAll(0x000000)
     light.showRing(
-    `blue blue blue black black black black blue blue blue`
+        `blue blue blue black black black black blue blue blue`
     )
     music.playTone(262, music.beat(BeatFraction.Half))
     light.setAll(0x000000)
 }
-function dot () {
+function dot() {
     light.setAll(0x000000)
     light.showRing(
-    `yellow black black black black black black black black yellow`
+        `yellow black black black black black black black black yellow`
     )
     music.playTone(523, music.beat(BeatFraction.Quarter))
     light.setAll(0x000000)
 }
 // translate number to string, display each digit with
 // neopixels.
-function ShowNum (value: number) {
+function ShowNum(value: number) {
     pause2 = true
     nstr = convertToText(value)
     light.setAll(0x000000)
@@ -90,18 +90,16 @@ function ShowNum (value: number) {
     light.setAll(0x000000)
     pause2 = false
 }
-function initMorse () {
+function initMorse() {
     morse = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----", "/"]
     alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", " "]
-    j316 = "for god so loved the world"
-    P23 = "the lord is my shepherd"
-    Phl4 = "i can do all things"
-    Isaiah263 = "thou wilt keep him in perfect peace"
-    _2Tim316 = "all scripture is given by inspiration of god"
-    gen11 = "in the beginning god created the heaven and the earth"
-    _1pt57 = "he careth for you"
-    i41 = "fear thou not"
-    verses = [Phl4, P23, _1pt57, i41, _2Tim316, gen11, Isaiah263, j316]
+    spock = "live long and prosper"
+    yoda = "do or do not"
+    yoda2 = "size matters not"
+    yoda3 = "luminous beings are we"
+    kirk = "to boldly go"
+    picard = "engage"
+    verses = [spock, yoda, yoda2, yoda3, kirk, picard]
     vnum = 0
 }
 // change mode
@@ -155,14 +153,13 @@ input.onGesture(Gesture.TiltLeft, function () {
 })
 let vnum = 0
 let verses: string[] = []
-let i41 = ""
-let _1pt57 = ""
-let gen11 = ""
-let _2Tim316 = ""
-let Isaiah263 = ""
-let Phl4 = ""
-let P23 = ""
-let j316 = ""
+let spock = ""
+let spock2 = ""
+let yoda = ""
+let yoda2 = ""
+let yoda3 = ""
+let kirk = ""
+let picard = ""
 let nval = 0
 let nstr = ""
 let morse: string[] = []
