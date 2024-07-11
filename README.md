@@ -19,5 +19,6 @@ light.wav
 minus.wav
 point.wav
 temp.wav
+idle.wav
 --------------------------
 * Tricorder.js - Javascript version of CircuitPlayground Tricorder
