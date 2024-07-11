@@ -14,6 +14,12 @@ green  = (0,20,0)
 red = (20,0,0)
 white = (20,20,20)
 
+color = [red,orange,gold,green,blue,white,pink]
+
+def cycle(x):
+    for i in range(x*10):
+        cp.pixels[i%10] = random.choice(color)
+        time.sleep(.1)
 
 def blinknum(num,color):
     if num != 0:
@@ -119,22 +125,25 @@ def saygees():
 temp = 0
 light = 1
 gees = 2
+idle = 3
 
-sound = ["digits/temp.wav", "digits/light.wav", "digits/gees.wav"]
+sound = ["digits/temp.wav", "digits/light.wav", "digits/gees.wav","digits/idle.wav"]
 
 blinknum(1,red)
 docage()
 blinknum(2,green)
 blinknum(3,blue)
+cycle(1)
 
-state = temp
+state = idle
 cp.play_file(sound[state])
 
 while True:
-
+    if state == idle:
+        cycle(1)
     if cp.button_a:
         state = state + 1
-        if state > gees:
+        if state > idle:
             state = temp
         cp.play_file(sound[state])
 
