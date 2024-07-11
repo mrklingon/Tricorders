@@ -15,6 +15,7 @@ red = (20,0,0)
 white = (20,20,20)
 
 color = [red,orange,gold,green,blue,white,pink]
+statecolor = [red,gold,green,blank]
 
 def cycle(x):
     for i in range(x*10):
@@ -146,6 +147,7 @@ while True:
         if state > idle:
             state = temp
         cp.play_file(sound[state])
+        blinknum(1,statecolor[state])
 
     if cp.button_b:
         if state == temp:
