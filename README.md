@@ -1,6 +1,6 @@
 # Tricorders
 Code for Circuit Playground "tricorders"
-* pycorder.py - "tricorder" program; toggle through temp/light/gees with button A, get reading with B
+* pycorder.py - "tricorder" program; toggle through idle/temp/light/gees with button A, get reading with B
 * bach.py  - provides musical notes, random music with touch A7, Star Wars Tune with A1
 --------------------------
 save .wav files in "digits/" directory
@@ -21,4 +21,5 @@ point.wav
 temp.wav
 idle.wav
 --------------------------
-* Tricorder.js - Javascript version of CircuitPlayground Tricorder
+* Tricorder.js - Javascript version of CircuitPlayground Tricorder - toggle through idle/light/temp/gees/text modes with A+B, get reading with button A.
+   when in "text" mode, tilt left/right to choose what phrase to display, press A to get morse code version
